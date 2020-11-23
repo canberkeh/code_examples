@@ -6,10 +6,10 @@ class DisTempConverters():
     @classmethod
     def print_menu(cls):
         """This module is made for printing info menu"""
-        print("\n***** Distance and Temprature Calculators *****")
+        print("\n\n***** Distance and Temprature Calculators *****")
         print("1- Km to Mile Converter\n2- Mile to Km Converter")
         print("3- Celcius to Fahrenheit Converter\n4- Fahrenheit to Celcius Converter")
-        print("00- Exit to Main Menu\n99- EXIT")
+        print("00- EXIT to Main Menu\n99- EXIT")
 
     @classmethod
     def km_mile(cls):
@@ -89,9 +89,8 @@ class DisTempConverters():
                 self.fah_cel()
                 self.continue_ask()
 
-            # elif choice == "00":
-            #     mainprg = MainMenu()
-            #     mainprg.Main()
+            elif choice == "00":
+                break
 
             elif choice == "99":
                 self.quit()

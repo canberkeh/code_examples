@@ -1,28 +1,67 @@
-def guess_the_number():
-    import random
-    print("***** WELCOME TO GUESS THE NUMBER GAME! *****")
-    r = random.randint(1,100)
-    can = int(input(' Enter lives :'))
-    hak = can
-    sayac = 0 
+'''
+Games
+'''
+import random
 
-    while hak>0:
-        hak = hak - 1
-        sayac = sayac + 1 
-        x = int(input(' Enter a number : '))
-        
-        if x == r:
-            print(f'You found it ! . {sayac}. times tried. Total points : {100 - (100/can) * (sayac - 1) }')
+def guess_the_number():
+    '''Guess the number game'''
+    work_on = True
+    while work_on:
+        print("***** WELCOME TO GUESS THE NUMBER GAME! *****")
+        random_number = random.randint(1,100)
+        live = int(input(' Enter lives :'))
+        count_live = live
+        count = 0
+
+        while count_live > 0:
+            count_live = count_live - 1
+            count = count + 1
+            given_number = int(input(' Enter a number : '))
+
+            if given_number > random_number:
+                print('Lower ')
+
+            elif given_number == random_number:
+                print(f'You found it ! {count} times tried. Total points : {100 - (100/live) * (count - 1)}')
+                break
+
+            else:
+                print('Upper ')
+
+            if count_live == 0:
+                print(f'Out of lives. Number : {random_number}. Points : {0}')
+
+        print("\n1- Play Again\n00- EXIT to Games Menu\n99- EXIT")
+        ask = input("Enter choice :")
+        if ask == "1":
+            guess_the_number()
+        elif ask == "00":
             break
-        elif x>r:
-            print('Lower ')
-            
-        elif x<r:
-            print('Upper ')
-        if hak == 0:
-            print(f'Out of lives. Number : {r}. Points : {0}')
+        elif ask == "99":
+            raise SystemExit
+        else:
+            continue
 
 def negative_index():
-    print("***** WELCOME TO NEGATIVE INDEX GAME! *****")
-    negative = input("Enter whatever you want to reverse it ! : ")
-    print(negative[::-1])
+    '''Negative indexing game'''
+    work_on = True
+    while work_on:
+        program_on = True
+        while program_on:
+            print("***** WELCOME TO NEGATIVE INDEX GAME! *****")
+            word = input("Enter whatever you want to reverse it ! : ")
+            print(word[::-1])
+            if word == word[::-1]:
+                print("It's a palindrome !")
+                break
+            break
+        print("\n1- Play Again\n00- EXIT to Games Menu\n99- EXIT")
+        ask = input("Enter choice :")
+        if ask == "1":
+            negative_index()
+        elif ask == "00":
+            break
+        elif ask == "99":
+            raise SystemExit
+        else:
+            continue

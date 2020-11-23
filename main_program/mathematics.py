@@ -5,13 +5,15 @@ class Mathematics():
     @classmethod
     def print_menu(cls):
         """Printing the menu"""
+        print("\n\n***** Mathematical Operations *****")
         print("1- Factorial\n2- Multiplication Table\n3- Fibonacci\n4- Sum up to given num")
         print("5- Decimal to others\n6- Advanced Calculator\n7- Divide remain")
         print("8- Greatest Common Divisor\n9- Logarithm")
         print("10- Power of the given number\n11- Square Root\n12- Radian to Degree")
         print("13- Degree to Radian\n14- Radian to Sinus\n15- Radian to Cosinus")
         print("16- Radian to Tangent\n17- Sinus to Radian")
-        print("18- Cosinus to Radian\n19- Tangent to Radian\n99- EXIT to Main Menu ")
+        print("18- Cosinus to Radian\n19- Tangent to Radian\n20- Basic Calculator")
+        print("00- EXIT to Main Menu\n99- EXIT")
 
     @classmethod
     def factorial(cls):
@@ -271,8 +273,15 @@ class Mathematics():
                 self.tan_rad()
                 self.continue_ask()
 
+            elif choice == "20":
+                calc = Calculator()
+                calc.main()
+
             elif choice == "99":
                 self.quit()
+
+            elif choice == "00":
+                break
 
             else:
                 print("INVALID INPUT! PLEASE CHOOSE BETWEEN 1-19 OR 99 TO EXIT")
@@ -296,3 +305,116 @@ class Mathematics():
     def quit(cls):
         """Quitting from program"""
         raise SystemExit
+
+'''
+Calculator
+'''
+class Calculator():
+    """Calculator class"""
+    @classmethod
+    def add(cls, number1, number2):
+        """add method"""
+        return number1 + number2
+
+    @classmethod
+    def substract(cls, number1, number2):
+        """substract method"""
+        return number1 - number2
+
+    @classmethod
+    def multiply(cls, number1, number2):
+        """multiply method"""
+        return number1 - number2
+
+    @classmethod
+    def divide(cls, number1, number2):
+        """division method"""
+        return number1 / number2
+
+    @classmethod
+    def modulo(cls, number1, number2):
+        """modulo method"""
+        return number1 % number2
+
+    @classmethod
+    def power(cls,number1, number2):
+        """power method"""
+        return number1 ** number2
+
+    @classmethod
+    def floor_division(cls,number1, number2):
+        """floor division method"""
+        return number1 // number2
+
+    def main(self):
+        """main menu"""
+        while True:
+            print("Please select an operation :\n1- Add\n2- Substract")
+            print("3- Multiply\n4- Divide")
+            print("5- Modulo\n6- Power of the given number\n7- Floor Division")
+            print("99- EXIT to Maths Menu")
+            select = float(input("Select operation : "))
+
+            if select == 1:
+                num1 = float(input("Enter number 1 : "))
+                num2 = float(input("Enter number 2 : "))
+                print(num1 , " + " , num2 , " = " , self.add(num1, num2))
+                cont = input("Do you want to continue y/n ")
+                if cont == "n":
+                    break
+
+            elif select == 2:
+                num1 = float(input("Enter number 1 : "))
+                num2 = float(input("Enter number 2 : "))
+                print(num1 , " - ", num2 , " = " , self.substract(num1, num2))
+                cont = input("Do you want to continue y/n ")
+                if cont == "n":
+                    break
+
+            elif select == 3:
+                num1 = float(input("Enter number 1 : "))
+                num2 = float(input("Enter number 2 : "))
+                print(num1 , " * ", num2 , " = " , self.multiply(num1, num2))
+                cont = input("Do you want to continue y/n ")
+                if cont == "n":
+                    break
+
+            elif select == 4:
+                num1 = float(input("Enter number 1 : "))
+                num2 = float(input("Enter number 2 : "))
+                print(num1 , " / ", num2 , " = " , self.divide(num1, num2))
+                cont = input("Do you want to continue y/n ")
+                if cont == "n":
+                    break
+
+            elif select == 5:
+                num1 = float(input("Enter number 1 : "))
+                num2 = float(input("Enter number 2 : "))
+                print(num1 , " % ", num2 , " = " , self.modulo(num1, num2))
+                cont = input("Do you want to continue y/n ")
+                if cont == "n":
+                    break
+
+            elif select == 6:
+                num1 = float(input("Enter number 1 : "))
+                num2 = float(input("Enter number 2 : "))
+                print(num1 , " ** ", num2 , " = " , self.power(num1, num2))
+                cont = input("Do you want to continue y/n ")
+                if cont == "n":
+                    break
+
+            elif select == 7:
+                num1 = float(input("Enter number 1 : "))
+                num2 = float(input("Enter number 2 : "))
+                print(num1 , " // ", num2 , " = " , self.floor_division(num1, num2))
+                cont = input("Do you want to continue y/n ")
+                if cont == "n":
+                    break
+            
+            elif select == 99:
+                mathematics = Mathematics()
+                mathematics.main()
+
+            else:
+                print("Invalid output! Please select 1-2-3-4-5-6-7 ! \n\n")
+            continue

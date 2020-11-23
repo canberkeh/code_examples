@@ -6,9 +6,9 @@ class AreasPerimeters():
     @classmethod
     def print_menu(cls):
         """This module is made for printing menu"""
-        print("\n***** Mathematic - Area and Perimeter Calculators *****")
+        print("\n\n***** Area and Perimeter Calculators *****")
         print("1- Area of Trapezoid\n2- Area of Parallelogram\n3- Area and Surface of Cylinder")
-        print("4- Area and Surface of Sphere\n5- Area of Sector\n00- Exit to Main Menu\n99- EXIT")
+        print("4- Area and Surface of Sphere\n5- Area of Sector\n00- EXIT to Main Menu\n99- EXIT")
 
     @classmethod
     def quit(cls):
@@ -56,9 +56,8 @@ class AreasPerimeters():
                 self.sector()
                 self.continue_ask()
 
-            # elif choice == "00":
-            #     mainprg = MainMenu()
-            #     mainprg.Main()
+            elif choice == "00":
+                break
 
             elif choice == "99":
                 self.quit()
