@@ -13,6 +13,7 @@ from games import games
 from areas_perimeters import AreasPerimeters
 from email_send import EmailApp
 from tax_calculate import TaxCalculate
+from exchange_office import ExchangeRates
 class MainMenu():
     """ADD THE MENUS INFORMATION HERE     *************************"""
 
@@ -24,7 +25,7 @@ class MainMenu():
         print("3- Area and Surface Calculators\n4- Show Annual Calendar")
         print("5- Browse/Add favorite website list\n6- Count Vowels")
         print("7- Download and open image\n8- Emails")
-        print("9- Tax calculator")
+        print("9- Tax calculator\n10- Exchange Office")
         print("213- Basic Tic-Tac-Toe Game ! ")
         print("66- Games\n99- EXIT")
 
@@ -121,6 +122,10 @@ class MainMenu():
                 tax.tax_rate()
                 self.continue_ask()
 
+            elif choice == "10":
+                exchange = ExchangeRates()
+                exchange.exchange_main() 
+
             elif choice == "31":
                 tictac2 = TictactoeAdvanced()
                 tictac2.game_on()
@@ -132,9 +137,6 @@ class MainMenu():
             elif choice == "32":
                 tictac1 = TicTacToe()
                 tictac1.game()
-
-            elif choice == "13":
-                pass
 
             elif choice == "99":
                 self.quit()
