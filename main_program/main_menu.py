@@ -14,6 +14,8 @@ from areas_perimeters import AreasPerimeters
 from email_send import EmailApp
 from tax_calculate import TaxCalculate
 from exchange_office import ExchangeRates
+
+
 class MainMenu():
     """ADD THE MENUS INFORMATION HERE     *************************"""
 
@@ -53,6 +55,7 @@ class MainMenu():
         print("\n***** Games Menu *****")
         print("1- Guess the number\n2- Reverse it")
         print("3-\n4- TicTacToe Advanced")
+        print("5- War Game Simulator")
         print("00- EXIT to Main Menu\n99- EXIT")
         work_on = True
         while work_on:
@@ -63,9 +66,14 @@ class MainMenu():
             elif choice == "2":
                 games.negative_index()
                 self.games_menu()
+            elif choice =="3":
+                pass
             elif choice == "4":
                 tictac2 = TictactoeAdvanced()
                 tictac2.game_on()
+                self.games_menu()
+            elif choice == "5":
+                import war_game
                 self.games_menu()
             elif choice == "00":
                 self.main()
